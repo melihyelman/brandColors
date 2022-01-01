@@ -1,4 +1,5 @@
 # clone project [brandColors](https://brandcolors.net/)
+# [tutorial](https://www.youtube.com/watch?v=tJNltOn-2Yg&t=174s)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
