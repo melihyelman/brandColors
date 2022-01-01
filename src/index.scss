@@ -19,6 +19,7 @@ code {
   border: 0;
   outline: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 html, body {
@@ -123,6 +124,7 @@ html, body {
     border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     background: #fff;
@@ -151,6 +153,18 @@ html, body {
         padding: 0 20px 0 60px;
       }
       
+    }
+    .back-btn {
+      background: transparent;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      color: #999;
+      svg {
+        display: block;
+        margin-right: 10px;
+      }
     }
     .downloads {
       padding-right: 25px;

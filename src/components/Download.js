@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import { GrClose, GrDownload, GrLink } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 import MainContext from '../context/MainContext';
 
 
@@ -52,9 +53,7 @@ function Download() {
         }
     }, [selectedBrands, downloadMethod])
 
-    const getLink = () => {
-        prompt("Here\'s the URL to shar", `http://localhost:3000/collection/${selectedBrands.join(',')}`);
-    }
+
 
 
     return (
@@ -66,7 +65,7 @@ function Download() {
                     <option value="less">LESS</option>
                 </select>
                 <a download={`brands.${downloadMethod}`} href={downloadUrl}><GrDownload /></a>
-                <button onClick={getLink}><GrLink /></button>
+                <Link to={`/collection/${selectedBrands.join(',')}`} ><GrLink /></Link>
             </div>
             <div className='selected' onClick={() => setSelectedBrands([])}>
                 <GrClose />

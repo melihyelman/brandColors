@@ -5,6 +5,8 @@ import BrandsData from "./brands.json"
 import MainContext from './context/MainContext';
 import { useEffect, useState } from 'react';
 import Copied from './components/Copied';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Collection from './components/Collection';
 
 
 function App() {
@@ -47,7 +49,12 @@ function App() {
     < >
       <MainContext.Provider value={values}>
         <SideBar />
-        <Content />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Content />} />
+            <Route path="/collection/:slugs" element={<Collection />} />
+          </Routes>
+        </BrowserRouter>
         {copiedBrand && <Copied color={copiedBrand} />}
       </MainContext.Provider>
     </>
