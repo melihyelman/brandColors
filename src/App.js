@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Copied from './components/Copied';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Collection from './components/Collection';
+import { forceCheck } from 'react-lazyload';
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
     setBrands(brandsArray.filter(brand => brand.title.toLowerCase().includes(search.toLowerCase())))
 
   }, [search])
+
+  useEffect(() => {
+    forceCheck()
+  }, [brands])
 
 
   const values = {

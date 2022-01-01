@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import MainContext from '../context/MainContext';
 import Brand from './Brand';
 import Download from './Download';
+import Loader from './Loader';
 
 function Collection() {
     const { slugs } = useParams();
@@ -31,7 +32,7 @@ function Collection() {
             </header>
             <section className='brands'>
                 {filteredBrands.map(brand => (
-                    <LazyLoad once={true} key={brand.slug} overflow={true} placeholder="Yükleniyor...">
+                    <LazyLoad once={true} key={brand.slug} overflow={true} placeholder={<Loader />}>
                         <Brand key={brand.id} brand={brand} />
                     </LazyLoad>
                 ))}
